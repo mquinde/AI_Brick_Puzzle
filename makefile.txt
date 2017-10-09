@@ -1,0 +1,11 @@
+OBJS = main.o puzzle.o node.o move.o
+CC = g++
+CFLAGS = -c
+EXEC = hw1
+
+$(EXEC): $(OBJS)
+	$(CC) -std=c++11 $(OBJS) -o $(EXEC);
+	./hw1 > output-hw1.txt
+ 
+%.o: %.cpp
+	$(CC) -std=c++11 -c $(CFLAGS) $< -o $@
